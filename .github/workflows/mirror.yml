@@ -13,9 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     name: mirror
     steps:
-      - name: mirror
-        id: mirror
+      - name: mirror1
+        id: mirror1
         uses: bridgelightcloud/github-mirror-action@v3
         with:
           origin: 'https://gitee.com/bianbu-linux/linux-6.1'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: mirror2
+        id: mirror2
+        uses: bridgelightcloud/github-mirror-action@v3
+        with:
+          origin: 'https://gitee.com/bianbu-linux/uboot-2022.10.git'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
